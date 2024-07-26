@@ -1,0 +1,1 @@
+MySQL session selection queris total 8 task pratice in SQLBolt.com

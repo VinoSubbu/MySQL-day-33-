@@ -1,0 +1,45 @@
+SQL Lesson 1: SELECT queries 101
+ 1.SELECT title FROM movies;
+ 2.SELECT director FROM movies;
+ 3.SELECT title,director FROM movies;
+ 4.SELECT title,year FROM movies;
+ 5.SELECT * FROM movies;
+
+SQL Lesson 2: Queries with constraints (Pt. 1)
+ 1.SELECT * FROM movies where id=6;
+ 2.SELECT * FROM movies where year between 2000 and 2010;
+ 3.SELECT * FROM movies where year not between 2000 and 2010;
+ 4.SELECT * FROM movies where id between 1 and 5;
+
+SQL Lesson 3: Queries with constraints (Pt. 2)
+ 1.SELECT * FROM movies where title like "Toy%";
+ 2.SELECT * FROM movies where director like "john%";
+ 3.SELECT * FROM movies where director not like "john%";
+ 4.SELECT * FROM movies where title like "Wall-_";
+
+SQL Lesson 4: Filtering and sorting Query results
+ 1.SELECT distinct Director FROM movies order by Director asc;
+ 2.SELECT * FROM movies order by year desc limit 4;
+ 3.SELECT * FROM movies order by title asc limit 5;
+ 4.SELECT * FROM movies order by title asc limit 5 offset 5;
+
+SQL Review: Simple SELECT Queries
+ 1.SELECT city,population FROM north_american_cities where country like "Canada";
+ 2.SELECT city,latitude FROM north_american_cities where country like "United States" order by latitude desc;
+ 3.SELECT city, longitude FROM north_american_cities where longitude < -87.629798 order by longitude ASC;
+ 4.SELECT * FROM north_american_cities where country like "Mexico" order by population desc limit 2;
+ 5.SELECT * FROM north_american_cities where country like "United States" order by population desc limit 2 offset 2;
+
+SQL Lesson 6: Multi-table queries with JOINs
+ 1.SELECT * FROM movies join boxoffice on id=movie_id;
+ 2.SELECT * FROM movies join boxoffice on id=movie_id where Domestic_sales<International_sales;
+ 3.SELECT * FROM movies join boxoffice on id=movie_id order by Rating desc
+
+SQL Lesson 7: OUTER JOINs
+ 1.SELECT DISTINCT building FROM employees; 
+ 2.SELECT * FROM Buildings ;
+ 3.SELECT DISTINCT building_name, role form buildings left join employees on building_name = building;
+
+SQL Lesson 8: A short note on NULLs
+ 1.SELECT name,role FROM employees where Building is null;
+ 2.SELECT DISTINCT building_name FROM buildings left join employees ON building_name = building where role is null;
